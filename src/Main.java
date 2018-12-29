@@ -1,9 +1,36 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(decode("AZK AZK BEEP"));
-        System.out.println(encode("ZAP ZAP YVVK"));
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Would you like to encode or decode a message? (Type E for encode and D for decode):");
+
+        String i = scanner.nextLine();
+
+        if(i.equals("E")){
+
+            System.out.println("Enter the text you wish to encode:");
+
+            String msg = scanner.nextLine();
+
+            System.out.println("Your encoded message is: " + encode(msg));
+
+        }else if(i.equals("D")){
+
+            System.out.println("Enter the text you wish to decode:");
+
+            String encoded = scanner.nextLine();
+
+            System.out.println("Your encoded message is: " + decode(encoded));
+
+        }else{
+            System.out.println("Invalid input.");
+        }
+
+
 
     }
 
@@ -74,7 +101,7 @@ public class Main {
 
         String alph = alphabet();
         String revAlph = revAlphabet();
-        String message = string;
+        String message = string.toUpperCase();
         String encoded = "";
 
 
